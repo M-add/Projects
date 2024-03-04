@@ -1,0 +1,11 @@
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\bin\Debug\Evalution2.2.exe.config
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\bin\Debug\Evalution2.2.exe
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\bin\Debug\Evalution2.2.pdb
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2.2.csprojAssemblyReference.cache
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2._2.Calender.resources
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2._2.Properties.Resources.resources
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2.2.csproj.GenerateResource.cache
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2.2.csproj.CoreCompileInputs.cache
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2.2.exe
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2.2.pdb
+C:\Users\SEZ-B11\source\repos\Evalution2.2\Evalution2.2\obj\Debug\Evalution2._2.Form1.resources
