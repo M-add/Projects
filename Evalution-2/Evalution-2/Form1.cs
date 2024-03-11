@@ -42,59 +42,62 @@ namespace Evalution_2
         private void Form1_Load(object sender, EventArgs e)
         {
             #region DataBase
-            //string localhost = "server=localhost;port=3306;uid=root;pwd=12345;database=mathan";
-            //connect = new MySqlConnection(localhost);
-            //connect.Open();
-            //string queryShow = "SELECT * FROM expense;";
-            //using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
-            //{
-            //    using (MySqlDataReader read = commandShow.ExecuteReader())
-            //    {
-            //        table.Load(read);
-            //    }
-            //}
-            //ExpenseGridView.DataSource = table; 
+            string localhost = "server=localhost;port=3306;uid=root;pwd=12345;database=mathan";
+            connect = new MySqlConnection(localhost);
+            connect.Open();
+            string queryShow = "SELECT * FROM expense;";
+            using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
+            {
+                using (MySqlDataReader read = commandShow.ExecuteReader())
+                {
+                    table.Load(read);
+                }
+            }
+            ExpenseGridView.DataSource = table;
+            ExpenseGridView.Columns["id"].Visible = false;
             #endregion
 
             textBox1.Font = textBox2.Font = textBox3.Font =
                 new Font("Microsoft Sans Serif", 16, FontStyle.Regular);
             comboBox1.Font = new Font("Microsoft Tai Le", 12, FontStyle.Regular);
 
-            ExpenseGridView.Columns.Add("Name", "Name");
-            ExpenseGridView.Columns.Add("Amount", "Amount");
-            ExpenseGridView.Columns.Add("Date", "Date");
-            ExpenseGridView.Columns.Add("Category", "Category");
+            //ExpenseGridView.Columns.Add("Name", "Name");
+            //ExpenseGridView.Columns.Add("Amount", "Amount");
+            //ExpenseGridView.Columns.Add("Date", "Date");
+            //ExpenseGridView.Columns.Add("Category", "Category");
         }
 
         private void DataBaseConnection(string query)
         {
-            try
+            //try
+            //{
+
+            //}
+            //catch (Exception)
+            //{
+            //}
+            //finally
+            //{
+            //    connect.Close();
+            //}
+            //connect.Open();
+
+            MySqlCommand command = new MySqlCommand(query, connect);
+            int rowsAffected = command.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
             {
-                connect.Open();
-
-                MySqlCommand command = new MySqlCommand(query, connect);
-                int rowsAffected = command.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                string queryShow = "SELECT * FROM expense;";
+                using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
                 {
-                    string queryShow = "SELECT * FROM expense;";
-                    using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
+                    using (MySqlDataReader read = commandShow.ExecuteReader())
                     {
-                        using (MySqlDataReader read = commandShow.ExecuteReader())
-                        {
-                            table.Load(read);
-                        }
+                        table.Load(read);
                     }
-                    ExpenseGridView.DataSource = table;
                 }
+                ExpenseGridView.DataSource = table;
             }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                connect.Close();
-            }
+
         }
 
 
@@ -106,13 +109,14 @@ namespace Evalution_2
                         textBox3.Text);
                 Expense.ExpenseList.Add(expense);
 
-                ExpenseGridView.Rows.Add(expense.Name, expense.Amount,
-                    expense.Date.ToShortDateString(), expense.Category);
+                //ExpenseGridView.Rows.Add(expense.Name, expense.Amount,
+                //    expense.Date.ToShortDateString(), expense.Category);
 
-               // string query = "INSERT INTO expense (Name, Date, Category) VALUES " +
-               //"('" + expense.Name + "', '" + expense.Date.ToString("dd-MM-yyyy") + "', '" + 
-               //expense.Category + "');";
-               // DataBaseConnection(query);
+                string query = "INSERT INTO expense (Name, Amount ,Date, Category) VALUES " +
+               "('"+ expense.Name + "', '" + expense.Amount + "', '" +
+                expense.Date.ToString("yyyy-MM-dd") + "', '" + expense.Category + "');";
+
+                DataBaseConnection(query);
 
                 CheckBudget(expense.Category, expense.Date.Month, expense.Amount);
             }
