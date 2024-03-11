@@ -1,0 +1,342 @@
+[33mcommit d98917131706b68839c8009b4ac3dc6c1d65b49a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: M-add <madan8508@gmail.com>
+Date:   Mon Mar 11 12:24:30 2024 +0530
+
+    commit new
+
+[1mdiff --git a/Calender/.vs/Calender/DesignTimeBuild/.dtbcache b/Calender/.vs/Calender/DesignTimeBuild/.dtbcache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fb6ca38[m
+Binary files /dev/null and b/Calender/.vs/Calender/DesignTimeBuild/.dtbcache differ
+[1mdiff --git a/Calender/.vs/Calender/v15/.suo b/Calender/.vs/Calender/v15/.suo[m
+[1mnew file mode 100644[m
+[1mindex 0000000..826bfcd[m
+Binary files /dev/null and b/Calender/.vs/Calender/v15/.suo differ
+[1mdiff --git a/Calender/.vs/Calender/v15/Server/sqlite3/db.lock b/Calender/.vs/Calender/v15/Server/sqlite3/db.lock[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/Calender/.vs/Calender/v15/Server/sqlite3/storage.ide b/Calender/.vs/Calender/v15/Server/sqlite3/storage.ide[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8ae2e84[m
+Binary files /dev/null and b/Calender/.vs/Calender/v15/Server/sqlite3/storage.ide differ
+[1mdiff --git a/Calender/Calender.sln b/Calender/Calender.sln[m
+[1mnew file mode 100644[m
+[1mindex 0000000..73c8ab6[m
+[1m--- /dev/null[m
+[1m+++ b/Calender/Calender.sln[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32m﻿[m[41m[m
+[32m+[m[32mMicrosoft Visual Studio Solution File, Format Version 12.00[m[41m[m
+[32m+[m[32m# Visual Studio Express 15 for Windows Desktop[m[41m[m
+[32m+[m[32mVisualStudioVersion = 15.0.27703.2047[m[41m[m
+[32m+[m[32mMinimumVisualStudioVersion = 10.0.40219.1[m[41m[m
+[32m+[m[32mProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evalution2.2", "Evalution2.2\Evalution2.2.csproj", "{ED4ADFC2-D780-43B8-A8D3-E838C5E34246}"[m[41m[m
+[32m+[m[32mEndProject[m[41m[m
+[32m+[m[32mGlobal[m[41m[m
+[32m+[m	[32mGlobalSection(SolutionConfigurationPlatforms) = preSolution[m[41m[m
+[32m+[m		[32mDebug|Any CPU = Debug|Any CPU[m[41m[m
+[32m+[m		[32mRelease|Any CPU = Release|Any CPU[m[41m[m
+[32m+[m	[32mEndGlobalSection[m[41m[m
+[32m+[m	[32mGlobalSection(ProjectConfigurationPlatforms) = postSolution[m[41m[m
+[32m+[m		[32m{ED4ADFC2-D780-43B8-A8D3-E838C5E34246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU[m[41m[m
+[32m+[m		[32m{ED4ADFC2-D780-43B8-A8D3-E838C5E34246}.Debug|Any CPU.Build.0 = Debug|Any CPU[m[41m[m
+[32m+[m		[32m{ED4ADFC2-D780-43B8-A8D3-E838C5E34246}.Release|Any CPU.ActiveCfg = Release|Any CPU[m[41m[m
+[32m+[m		[32m{ED4ADFC2-D780-43B8-A8D3-E838C5E34246}.Release|Any CPU.Build.0 = Release|Any CPU[m[41m[m
+[32m+[m	[32mEndGlobalSection[m[41m[m
+[32m+[m	[32mGlobalSection(SolutionProperties) = preSolution[m[41m[m
+[32m+[m		[32mHideSolutionNode = FALSE[m[41m[m
+[32m+[m	[32mEndGlobalSection[m[41m[m
+[32m+[m	[32mGlobalSection(ExtensibilityGlobals) = postSolution[m[41m[m
+[32m+[m		[32mSolutionGuid = {6FBB10CC-211B-4F6E-8FC6-7A46D63AA42D}[m[41m[m
+[32m+[m	[32mEndGlobalSection[m[41m[m
+[32m+[m[32mEndGlobal[m[41m[m
+[1mdiff --git a/Calender/Calender/App.config b/Calender/Calender/App.config[m
+[1mnew file mode 100644[m
+[1mindex 0000000..00bfd11[m
+[1m--- /dev/null[m
+[1m+++ b/Calender/Calender/App.config[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8" ?>[m[41m[m
+[32m+[m[32m<configuration>[m[41m[m
+[32m+[m[32m    <startup>[m[41m [m
+[32m+[m[32m        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />[m[41m[m
+[32m+[m[32m    </startup>[m[41m[m
+[32m+[m[32m</configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/Calender/Calender/Calender.Designer.cs b/Calender/Calender/Calender.Designer.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fffe7d0[m
+[1m--- /dev/null[m
+[1m+++ b/Calender/Calender/Calender.Designer.cs[m
+[36m@@ -0,0 +1,705 @@[m
+[32m+[m[32m﻿namespace Evalution2._2[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32m    partial class Calender[m[41m[m
+[32m+[m[32m    {[m[41m[m
+[32m+[m[32m        /// <summary>[m[41m [m
+[32m+[m[32m        /// Required designer variable.[m[41m[m
+[32m+[m[32m        /// </summary>[m[41m[m
+[32m+[m[32m        private System.ComponentModel.IContainer components = null;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        /// <summary>[m[41m [m
+[32m+[m[32m        /// Clean up any resources being used.[m[41m[m
+[32m+[m[32m        /// </summary>[m[41m[m
+[32m+[m[32m        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>[m[41m[m
+[32m+[m[32m        protected override void Dispose(bool disposing)[m[41m[m
+[32m+[m[32m        {[m[41m[m
+[32m+[m[32m            if (disposing && (components != null))[m[41m[m
+[32m+[m[32m            {[m[41m[m
+[32m+[m[32m                components.Dispose();[m[41m[m
+[32m+[m[32m            }[m[41m[m
+[32m+[m[32m            base.Dispose(disposing);[m[41m[m
+[32m+[m[32m        }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        #region Component Designer generated code[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        /// <summary>[m[41m [m
+[32m+[m[32m        /// Required method for Designer support - do not modify[m[41m [m
+[32m+[m[32m        /// the contents of this method with the code editor.[m[41m[m
+[32m+[m[32m        /// </summary>[m[41m[m
+[32m+[m[32m        private void InitializeComponent()[m[41m[m
+[32m+[m[32m        {[m[41m[m
+[32m+[m[32m            this.MonthLabel = new System.Windows.Forms.Label();[m[41m[m
+[32m+[m[32m            this.MonthBackButton = new System.Windows.Forms.Button();[m[41m[m
+[32m+[m[32m            this.MonthNextButton = new System.Windows.Forms.Button();[m[41m[m
+[32m+[m[32m            this.YearNextButton = new System.Windows.Forms.Button();[m[41m[m
+[32m+[m[32m            this.YearBackButton = new System.Windows.Forms.Button();[m[41m[m
+[32m+[m[32m            this.YearLabel = new System.Windows.Forms.Label();[m[41m[m
+[32m+[m[32m            this.DatePanel = new System.Windows.Forms.Panel();[m[41m[m
+[32m+[m[32m            this.textBox35 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox34 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox33 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox32 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox31 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox30 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox29 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox22 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox23 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox24 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox25 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox26 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox27 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox28 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox15 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox16 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox17 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox18 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox19 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox20 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox21 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox8 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox9 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox10 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox11 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox12 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox13 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox14 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox7 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox6 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox5 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox4 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox3 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox2 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.textBox1 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.WeekPanel = new System.Windows.Forms.Panel();[m[41m[m
+[32m+[m[32m            this.box7 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box6 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box5 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box4 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box3 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box2 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.box1 = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.TimeAndDatePanel = new System.Windows.Forms.Panel();[m[41m[m
+[32m+[m[32m            this.TimeLabel = new System.Windows.Forms.Label();[m[41m[m
+[32m+[m[32m            this.DayLabel = new System.Windows.Forms.Label();[m[41m[m
+[32m+[m[32m            this.SearchBox = new System.Windows.Forms.TextBox();[m[41m[m
+[32m+[m[32m            this.SearchButton = new System.Windows.Forms.Button();[m[41m[m
+[32m+[m[32m            this.DatePanel.SuspendLayout();[m[41m[m
+[32m+[m[32m            this.WeekPanel.SuspendLayout();[m[41m[m
+[32m+[m[32m            this.TimeAndDatePanel.SuspendLayout();[m[41m[m
+[32m+[m[32m            this.SuspendLayout();[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // MonthLabel[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.MonthLabel.BackColor = System.Drawing.SystemColors.ControlLight;[m[41m[m
+[32m+[m[32m            this.MonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));[m[41m[m
+[32m+[m[32m            this.MonthLabel.Location = new System.Drawing.Point(48, 9);[m[41m[m
+[32m+[m[32m            this.MonthLabel.Name = "MonthLabel";[m[41m[m
+[32m+[m[32m            this.MonthLabel.Size = new System.Drawing.Size(85, 23);[m[41m[m
+[32m+[m[32m            this.MonthLabel.TabIndex = 0;[m[41m[m
+[32m+[m[32m            this.MonthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // MonthBackButton[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.MonthBackButton.Location = new System.Drawing.Point(4, 9);[m[41m[m
+[32m+[m[32m            this.MonthBackButton.Name = "MonthBackButton";[m[41m[m
+[32m+[m[32m            this.MonthBackButton.Size = new System.Drawing.Size(38, 23);[m[41m[m
+[32m+[m[32m            this.MonthBackButton.TabIndex = 1;[m[41m[m
+[32m+[m[32m            this.MonthBackButton.Text = "<";[m[41m[m
+[32m+[m[32m            this.MonthBackButton.UseVisualStyleBackColor = true;[m[41m[m
+[32m+[m[32m            this.MonthBackButton.Click += new System.EventHandler(this.MonthBackButton_Click);[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // MonthNextButton[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.MonthNextButton.Location = new System.Drawing.Point(139, 9);[m[41m[m
+[32m+[m[32m            this.MonthNextButton.Name = "MonthNextButton";[m[41m[m
+[32m+[m[32m            this.MonthNextButton.Size = new System.Drawing.Size(38, 23);[m[41m[m
+[32m+[m[32m            this.MonthNextButton.TabIndex = 2;[m[41m[m
+[32m+[m[32m            this.MonthNextButton.Text = ">";[m[41m[m
+[32m+[m[32m            this.MonthNextButton.UseVisualStyleBackColor = true;[m[41m[m
+[32m+[m[32m            this.MonthNextButton.Click += new System.EventHandler(this.MonthNextButton_Click);[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // YearNextButton[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.YearNextButton.Location = new System.Drawing.Point(329, 9);[m[41m[m
+[32m+[m[32m            this.YearNextButton.Name = "YearNextButton";[m[41m[m
+[32m+[m[32m            this.YearNextButton.Size = new System.Drawing.Size(38, 23);[m[41m[m
+[32m+[m[32m            this.YearNextButton.TabIndex = 5;[m[41m[m
+[32m+[m[32m            this.YearNextButton.Text = ">";[m[41m[m
+[32m+[m[32m            this.YearNextButton.UseVisualStyleBackColor = true;[m[41m[m
+[32m+[m[32m            this.YearNextButton.Click += new System.EventHandler(this.YearNextButton_Click);[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // YearBackButton[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.YearBackButton.Location = new System.Drawing.Point(194, 9);[m[41m[m
+[32m+[m[32m            this.YearBackButton.Name = "YearBackButton";[m[41m[m
+[32m+[m[32m            this.YearBackButton.Size = new System.Drawing.Size(38, 23);[m[41m[m
+[32m+[m[32m            this.YearBackButton.TabIndex = 4;[m[41m[m
+[32m+[m[32m            this.YearBackButton.Text = "<";[m[41m[m
+[32m+[m[32m            this.YearBackButton.UseVisualStyleBackColor = true;[m[41m[m
+[32m+[m[32m            this.YearBackButton.Click += new System.EventHandler(this.YearBackButton_Click);[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // YearLabel[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.YearLabel.BackColor = System.Drawing.SystemColors.ControlLight;[m[41m[m
+[32m+[m[32m            this.YearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));[m[41m[m
+[32m+[m[32m            this.YearLabel.Location = new System.Drawing.Point(238, 9);[m[41m[m
+[32m+[m[32m            this.YearLabel.Name = "YearLabel";[m[41m[m
+[32m+[m[32m            this.YearLabel.Size = new System.Drawing.Size(85, 23);[m[41m[m
+[32m+[m[32m            this.YearLabel.TabIndex = 3;[m[41m[m
+[32m+[m[32m            this.YearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // DatePanel[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.DatePanel.BackColor = System.Drawing.Color.DimGray;[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox35);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox34);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox33);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox32);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox31);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox30);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox29);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox22);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox23);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox24);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox25);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox26);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox27);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox28);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox15);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox16);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox17);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox18);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox19);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox20);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox21);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox8);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox9);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox10);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox11);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox12);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox13);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox14);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox7);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox6);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox5);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox4);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox3);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox2);[m[41m[m
+[32m+[m[32m            this.DatePanel.Controls.Add(this.textBox1);[m[41m[m
+[32m+[m[32m            this.DatePanel.Dock = System.Windows.Forms.DockStyle.Bottom;[m[41m[m
+[32m+[m[32m            this.DatePanel.Location = new System.Drawing.Point(0, 148);[m[41m[m
+[32m+[m[32m            this.DatePanel.Name = "DatePanel";[m[41m[m
+[32m+[m[32m            this.DatePanel.Size = new System.Drawing.Size(542, 307);[m[41m[m
+[32m+[m[32m            this.DatePanel.TabIndex = 6;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox35[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox35.Location = new System.Drawing.Point(463, 241);[m[41m[m
+[32m+[m[32m            this.textBox35.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox35.Name = "textBox35";[m[41m[m
+[32m+[m[32m            this.textBox35.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox35.TabIndex = 39;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox34[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox34.Location = new System.Drawing.Point(388, 241);[m[41m[m
+[32m+[m[32m            this.textBox34.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox34.Name = "textBox34";[m[41m[m
+[32m+[m[32m            this.textBox34.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox34.TabIndex = 38;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox33[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox33.Location = new System.Drawing.Point(310, 241);[m[41m[m
+[32m+[m[32m            this.textBox33.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox33.Name = "textBox33";[m[41m[m
+[32m+[m[32m            this.textBox33.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox33.TabIndex = 37;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox32[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox32.Location = new System.Drawing.Point(232, 241);[m[41m[m
+[32m+[m[32m            this.textBox32.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox32.Name = "textBox32";[m[41m[m
+[32m+[m[32m            this.textBox32.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox32.TabIndex = 36;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox31[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox31.Location = new System.Drawing.Point(154, 241);[m[41m[m
+[32m+[m[32m            this.textBox31.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox31.Name = "textBox31";[m[41m[m
+[32m+[m[32m            this.textBox31.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox31.TabIndex = 35;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox30[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox30.Location = new System.Drawing.Point(76, 241);[m[41m[m
+[32m+[m[32m            this.textBox30.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox30.Name = "textBox30";[m[41m[m
+[32m+[m[32m            this.textBox30.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox30.TabIndex = 34;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox29[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox29.Location = new System.Drawing.Point(3, 241);[m[41m[m
+[32m+[m[32m            this.textBox29.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox29.Name = "textBox29";[m[41m[m
+[32m+[m[32m            this.textBox29.Size = new System.Drawing.Size(67, 53);[m[41m[m
+[32m+[m[32m            this.textBox29.TabIndex = 33;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox22[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox22.Location = new System.Drawing.Point(465, 182);[m[41m[m
+[32m+[m[32m            this.textBox22.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox22.Name = "textBox22";[m[41m[m
+[32m+[m[32m            this.textBox22.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox22.TabIndex = 32;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox23[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox23.Location = new System.Drawing.Point(388, 182);[m[41m[m
+[32m+[m[32m            this.textBox23.Multiline = true;[m[41m[m
+[32m+[m[32m            this.textBox23.Name = "textBox23";[m[41m[m
+[32m+[m[32m            this.textBox23.Size = new System.Drawing.Size(72, 53);[m[41m[m
+[32m+[m[32m            this.textBox23.TabIndex = 31;[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox24[m[41m[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox24.Location = new System.Drawing.Point(310, 179);[m[41m[m
+[32m+[m[32m            this.textBox24.Multiline = true;[m[41m[m
+[
