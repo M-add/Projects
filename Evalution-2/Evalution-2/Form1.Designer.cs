@@ -79,6 +79,7 @@
             this.GridViewPanel = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ExpenseGridView = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SidePanel.SuspendLayout();
             this.EditModePanel.SuspendLayout();
             this.ViewPanel.SuspendLayout();
@@ -650,6 +651,7 @@
             // GridViewPanel
             // 
             this.GridViewPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.GridViewPanel.Controls.Add(this.panel1);
             this.GridViewPanel.Controls.Add(this.dateTimePicker1);
             this.GridViewPanel.Controls.Add(this.ExpenseGridView);
             this.GridViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -681,6 +683,13 @@
             this.ExpenseGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridView_CellClick);
             this.ExpenseGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridViewCellValueChanged);
             this.ExpenseGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ExpenseGridView_RowsRemoved);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(290, 136);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -767,6 +776,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
