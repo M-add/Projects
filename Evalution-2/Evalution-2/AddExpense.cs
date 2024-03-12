@@ -33,7 +33,7 @@ namespace Evalution_2
 
                 DataBaseConnection(query);
 
-                CheckBudget(expense.Category, expense.Date.Month, expense.Amount);
+                CheckBudget(expense.Category, expense.Date.Month, expense.Date.Year, expense.Amount);
             }
         }
 

@@ -17,7 +17,7 @@ namespace Evalution_2
     {
         #region Variables
         private DataTable data = new DataTable();
-        Dictionary<string, Dictionary<int, int>> Budget = new Dictionary<string, Dictionary<int, int>>();
+        Dictionary<string, Dictionary<string, int>> Budget = new Dictionary<string, Dictionary<string, int>>();
         private int index;
         private bool UpdateClick = false;
         private bool EditMode = false;
@@ -113,9 +113,11 @@ namespace Evalution_2
 
             string key = ExpenseManager.ExpenseList[e.RowIndex].Category;
             int month = ExpenseManager.ExpenseList[e.RowIndex].Date.Month;
-            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+            int Year = ExpenseManager.ExpenseList[e.RowIndex].Date.Year;
+            string InnerKey = "" + month + "," + Year;
+            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][month] += ExpenseManager.ExpenseList[e.RowIndex].Amount;
+                Budget[key][InnerKey] += ExpenseManager.ExpenseList[e.RowIndex].Amount;
             }
             foreach (var exp in ExpenseManager.ExpenseList)
             {
@@ -126,10 +128,10 @@ namespace Evalution_2
                 count++;
             }
 
-            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][month] -= ExpenseManager.ExpenseList[e.RowIndex].Amount;
-                if (Budget[key][month] <= 0)
+                Budget[key][InnerKey] -= ExpenseManager.ExpenseList[e.RowIndex].Amount;
+                if (Budget[key][InnerKey] <= 0)
                 {
                     MessageBox.Show("The Limit of " + key + " Exceeded for month :- " + month, "",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -137,7 +139,7 @@ namespace Evalution_2
             }
         }
 
-        
+
 
         private void ExpenseGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -189,18 +191,20 @@ namespace Evalution_2
             SetButton.Location = new Point(TitlePanel.Width - SetButton.Width, SetButton.Location.Y);
         }
 
-        
+
 
         private void ExpenseGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             if (e.RowIndex < ExpenseManager.ExpenseList.Count)
             {
                 string key = ExpenseManager.ExpenseList[e.RowIndex].Category;
-                int month = ExpenseManager.ExpenseList[e.RowIndex].Date.Month;
                 int amount = ExpenseManager.ExpenseList[e.RowIndex].Amount;
-                if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+                int month = ExpenseManager.ExpenseList[e.RowIndex].Date.Month;
+                int Year = ExpenseManager.ExpenseList[e.RowIndex].Date.Year;
+                string InnerKey = "" + month + "," + Year;
+                if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
                 {
-                    Budget[key][month] += amount;
+                    Budget[key][InnerKey] += amount;
                 }
 
                 //    if (!UpdateClick)
@@ -225,7 +229,7 @@ namespace Evalution_2
                 //    }
             }
         }
-         
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             string query = "Delete from expense";

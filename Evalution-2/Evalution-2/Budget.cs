@@ -15,6 +15,12 @@ namespace Evalution_2
 {
     public partial class Form1 : Form
     {
+        private void BudgetButtonClick(object sender, EventArgs e)
+        {
+            BudgetPanel.Visible = true;
+            BudgetButton.Visible = false;
+        }
+
         public void SetButtonClick(object sender, EventArgs e)
         {
             if (BudgetBox.Text != "" && BudgetComboBox.Text != "")
@@ -23,21 +29,26 @@ namespace Evalution_2
 
                 int value = int.Parse(split[0]);
                 int month = int.Parse(split[1]);
+                int year = int.Parse(split[2]);
+                string InnerKey = month + "," + year;
                 string key = BudgetComboBox.Text;
-                if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+                if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
                 {
-                    Budget[key][month] = value;
+                    Budget[key][InnerKey] = value;
                 }
                 else if (Budget.ContainsKey(key))
                 {
-                    Budget[key].Add(month, value);
+                    Budget[key].Add(InnerKey, value);
                 }
                 else
                 {
-                    Budget.Add(BudgetComboBox.Text, new Dictionary<int, int> { { month, value } });
+                    Budget.Add(BudgetComboBox.Text,
+                        new Dictionary<string, int> { { InnerKey, value } });
                 }
                 BudgetBox.Text = "";
                 BudgetComboBox.Text = "";
+                BudgetButton.Visible = true;
+                BudgetPanel.Visible = false;
             }
             CheckPreviousBudget();
         }
@@ -52,25 +63,29 @@ namespace Evalution_2
                     string key = row.Cells[4].Value.ToString();
                     int amount = int.Parse(row.Cells[2].Value.ToString());
                     int month = (DateTime.Parse(row.Cells[3].Value.ToString())).Month;
-                    if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+                    int year = (DateTime.Parse(row.Cells[3].Value.ToString())).Year;
+                    string InnerKey = month + "," + year;
+                    if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
                     {
-                        Budget[key][month] -= amount;
+                        Budget[key][InnerKey] -= amount;
                     }
                 }
             }
         }
 
-        private void CheckBudget(string key, int month, int amount)
+        private void CheckBudget(string key, int month, int year, int amount)
         {
-            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+            string InnerKey = month + "," + year;
+
+            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][month] -= amount;
-                if (Budget[key][month] < 0)
+                Budget[key][InnerKey] -= amount;
+                if (Budget[key][InnerKey] < 0)
                 {
                     MessageBox.Show("The Limit of " + key + " Exceeded for month : " + month,
                         "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (Budget[key][month] == 0)
+                else if (Budget[key][InnerKey] == 0)
                 {
                     MessageBox.Show("The Limit of " + key + " Reached for month : " + month,
                         "", MessageBoxButtons.OK, MessageBoxIcon.Warning);

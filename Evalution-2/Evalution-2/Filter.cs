@@ -89,21 +89,23 @@ namespace Evalution_2
             UpdateClick = true;
             string key = FilterBox.Text;
             int month = prev[2];
+            int year = prev[3];
+            string InnerKey = month + "," + year;
             int prevAmount = prev[0];
             int updatedAmount = prev[1];
 
-            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][month] += prevAmount;
-                Budget[key][month] -= updatedAmount;
+                Budget[key][InnerKey] += prevAmount;
+                Budget[key][InnerKey] -= updatedAmount;
             }
             //ExpenseGridView.Rows.Clear();
             table.Rows.Clear();
             ExpenseGridView.DataSource = null;
-            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(month))
+            if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][month] -= updatedAmount;
-                if (Budget[key][month] <= 0)
+                Budget[key][InnerKey] -= updatedAmount;
+                if (Budget[key][InnerKey] <= 0)
                 {
                     MessageBox.Show("The Limit of " + key + " Exceeded for month :- " + month, "",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -44,6 +44,7 @@ namespace Evalution_2
             BudgetUpdate = new int[3];
             BudgetUpdate[0] = int.Parse(row.Cells[1].Value.ToString());
             BudgetUpdate[2] = DateTime.Parse(DateTime.Parse(row.Cells[2].Value.ToString()).ToString()).Month;
+            BudgetUpdate[3] = DateTime.Parse(DateTime.Parse(row.Cells[2].Value.ToString()).ToString()).Year;
         }
 
         private void SetValue()
@@ -84,7 +85,7 @@ namespace Evalution_2
                     ExpenseManager.ExpenseList[i].Date = DateTime.Parse(DateTime.Parse(s).ToShortDateString());
                     count++;
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                 }
             }

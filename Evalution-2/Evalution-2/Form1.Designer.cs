@@ -58,10 +58,11 @@
             this.AddOkButton = new System.Windows.Forms.Button();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.TitlePanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SetButton = new System.Windows.Forms.Button();
+            this.BudgetButton = new System.Windows.Forms.Button();
+            this.BudgetPanel = new System.Windows.Forms.Panel();
             this.BudgetBox = new System.Windows.Forms.TextBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
+            this.SetButton = new System.Windows.Forms.Button();
             this.SidePanelButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.EditPanel = new System.Windows.Forms.Panel();
@@ -77,20 +78,18 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.GridViewPanel = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ExpenseGridView = new System.Windows.Forms.DataGridView();
-            this.BudgetPanel = new System.Windows.Forms.Panel();
             this.SidePanel.SuspendLayout();
             this.EditModePanel.SuspendLayout();
             this.ViewPanel.SuspendLayout();
             this.ExpensePanel.SuspendLayout();
             this.AddNewPanel.SuspendLayout();
             this.TitlePanel.SuspendLayout();
+            this.BudgetPanel.SuspendLayout();
             this.EditPanel.SuspendLayout();
             this.FilterPanel.SuspendLayout();
             this.GridViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGridView)).BeginInit();
-            this.BudgetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -441,7 +440,8 @@
             // TitlePanel
             // 
             this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
-            this.TitlePanel.Controls.Add(this.button1);
+            this.TitlePanel.Controls.Add(this.BudgetButton);
+            this.TitlePanel.Controls.Add(this.BudgetPanel);
             this.TitlePanel.Controls.Add(this.SidePanelButton);
             this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitlePanel.Location = new System.Drawing.Point(200, 10);
@@ -451,48 +451,67 @@
             this.TitlePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TitlePanelPaint);
             this.TitlePanel.Resize += new System.EventHandler(this.TitlePanelResize);
             // 
-            // button1
+            // BudgetButton
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(387, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 43);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Budget";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BudgetButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.BudgetButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BudgetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BudgetButton.Location = new System.Drawing.Point(540, 0);
+            this.BudgetButton.Name = "BudgetButton";
+            this.BudgetButton.Size = new System.Drawing.Size(108, 49);
+            this.BudgetButton.TabIndex = 36;
+            this.BudgetButton.Text = "Budget";
+            this.BudgetButton.UseVisualStyleBackColor = false;
+            this.BudgetButton.Click += new System.EventHandler(this.BudgetButtonClick);
+            // 
+            // BudgetPanel
+            // 
+            this.BudgetPanel.Controls.Add(this.BudgetBox);
+            this.BudgetPanel.Controls.Add(this.BudgetComboBox);
+            this.BudgetPanel.Controls.Add(this.SetButton);
+            this.BudgetPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BudgetPanel.Location = new System.Drawing.Point(648, 0);
+            this.BudgetPanel.Name = "BudgetPanel";
+            this.BudgetPanel.Size = new System.Drawing.Size(185, 49);
+            this.BudgetPanel.TabIndex = 6;
+            this.BudgetPanel.Visible = false;
+            // 
+            // BudgetBox
+            // 
+            this.BudgetBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BudgetBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BudgetBox.Location = new System.Drawing.Point(0, 22);
+            this.BudgetBox.Multiline = true;
+            this.BudgetBox.Name = "BudgetBox";
+            this.BudgetBox.Size = new System.Drawing.Size(127, 27);
+            this.BudgetBox.TabIndex = 34;
+            // 
+            // BudgetComboBox
+            // 
+            this.BudgetComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BudgetComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BudgetComboBox.FormattingEnabled = true;
+            this.BudgetComboBox.Items.AddRange(new object[] {
+            "Food",
+            "Snacks",
+            "Clothes"});
+            this.BudgetComboBox.Location = new System.Drawing.Point(0, 0);
+            this.BudgetComboBox.Name = "BudgetComboBox";
+            this.BudgetComboBox.Size = new System.Drawing.Size(127, 24);
+            this.BudgetComboBox.TabIndex = 33;
             // 
             // SetButton
             // 
             this.SetButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.SetButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.SetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SetButton.Location = new System.Drawing.Point(187, 3);
+            this.SetButton.Location = new System.Drawing.Point(127, 0);
             this.SetButton.Name = "SetButton";
             this.SetButton.Size = new System.Drawing.Size(58, 49);
             this.SetButton.TabIndex = 35;
             this.SetButton.Text = "Set";
             this.SetButton.UseVisualStyleBackColor = false;
             this.SetButton.Click += new System.EventHandler(this.SetButtonClick);
-            // 
-            // BudgetBox
-            // 
-            this.BudgetBox.Location = new System.Drawing.Point(3, 30);
-            this.BudgetBox.Multiline = true;
-            this.BudgetBox.Name = "BudgetBox";
-            this.BudgetBox.Size = new System.Drawing.Size(181, 21);
-            this.BudgetBox.TabIndex = 34;
-            // 
-            // BudgetComboBox
-            // 
-            this.BudgetComboBox.FormattingEnabled = true;
-            this.BudgetComboBox.Items.AddRange(new object[] {
-            "Food",
-            "Snacks",
-            "Clothes"});
-            this.BudgetComboBox.Location = new System.Drawing.Point(3, 3);
-            this.BudgetComboBox.Name = "BudgetComboBox";
-            this.BudgetComboBox.Size = new System.Drawing.Size(181, 21);
-            this.BudgetComboBox.TabIndex = 33;
             // 
             // SidePanelButton
             // 
@@ -649,20 +668,12 @@
             // GridViewPanel
             // 
             this.GridViewPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.GridViewPanel.Controls.Add(this.BudgetPanel);
             this.GridViewPanel.Controls.Add(this.ExpenseGridView);
             this.GridViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewPanel.Location = new System.Drawing.Point(200, 162);
             this.GridViewPanel.Name = "GridViewPanel";
             this.GridViewPanel.Size = new System.Drawing.Size(833, 582);
             this.GridViewPanel.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(242, 20);
-            this.dateTimePicker1.TabIndex = 5;
             // 
             // ExpenseGridView
             // 
@@ -680,17 +691,6 @@
             this.ExpenseGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridView_CellClick);
             this.ExpenseGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridViewCellValueChanged);
             this.ExpenseGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ExpenseGridView_RowsRemoved);
-            // 
-            // BudgetPanel
-            // 
-            this.BudgetPanel.Controls.Add(this.BudgetComboBox);
-            this.BudgetPanel.Controls.Add(this.SetButton);
-            this.BudgetPanel.Controls.Add(this.dateTimePicker1);
-            this.BudgetPanel.Controls.Add(this.BudgetBox);
-            this.BudgetPanel.Location = new System.Drawing.Point(522, 17);
-            this.BudgetPanel.Name = "BudgetPanel";
-            this.BudgetPanel.Size = new System.Drawing.Size(248, 80);
-            this.BudgetPanel.TabIndex = 6;
             // 
             // Form1
             // 
@@ -715,13 +715,13 @@
             this.AddNewPanel.ResumeLayout(false);
             this.AddNewPanel.PerformLayout();
             this.TitlePanel.ResumeLayout(false);
+            this.BudgetPanel.ResumeLayout(false);
+            this.BudgetPanel.PerformLayout();
             this.EditPanel.ResumeLayout(false);
             this.FilterPanel.ResumeLayout(false);
             this.FilterPanel.PerformLayout();
             this.GridViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGridView)).EndInit();
-            this.BudgetPanel.ResumeLayout(false);
-            this.BudgetPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -776,8 +776,7 @@
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Panel EditModePanel;
         private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button BudgetButton;
         private System.Windows.Forms.Panel BudgetPanel;
     }
 }
