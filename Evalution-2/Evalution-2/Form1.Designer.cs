@@ -79,7 +79,7 @@
             this.GridViewPanel = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ExpenseGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.BudgetPanel = new System.Windows.Forms.Panel();
             this.SidePanel.SuspendLayout();
             this.EditModePanel.SuspendLayout();
             this.ViewPanel.SuspendLayout();
@@ -90,6 +90,7 @@
             this.FilterPanel.SuspendLayout();
             this.GridViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGridView)).BeginInit();
+            this.BudgetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -441,9 +442,6 @@
             // 
             this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
             this.TitlePanel.Controls.Add(this.button1);
-            this.TitlePanel.Controls.Add(this.SetButton);
-            this.TitlePanel.Controls.Add(this.BudgetBox);
-            this.TitlePanel.Controls.Add(this.BudgetComboBox);
             this.TitlePanel.Controls.Add(this.SidePanelButton);
             this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitlePanel.Location = new System.Drawing.Point(200, 10);
@@ -468,9 +466,9 @@
             // 
             this.SetButton.BackColor = System.Drawing.Color.SkyBlue;
             this.SetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SetButton.Location = new System.Drawing.Point(772, 2);
+            this.SetButton.Location = new System.Drawing.Point(187, 3);
             this.SetButton.Name = "SetButton";
-            this.SetButton.Size = new System.Drawing.Size(58, 43);
+            this.SetButton.Size = new System.Drawing.Size(58, 49);
             this.SetButton.TabIndex = 35;
             this.SetButton.Text = "Set";
             this.SetButton.UseVisualStyleBackColor = false;
@@ -478,10 +476,10 @@
             // 
             // BudgetBox
             // 
-            this.BudgetBox.Location = new System.Drawing.Point(637, 25);
+            this.BudgetBox.Location = new System.Drawing.Point(3, 30);
             this.BudgetBox.Multiline = true;
             this.BudgetBox.Name = "BudgetBox";
-            this.BudgetBox.Size = new System.Drawing.Size(133, 21);
+            this.BudgetBox.Size = new System.Drawing.Size(181, 21);
             this.BudgetBox.TabIndex = 34;
             // 
             // BudgetComboBox
@@ -491,9 +489,9 @@
             "Food",
             "Snacks",
             "Clothes"});
-            this.BudgetComboBox.Location = new System.Drawing.Point(637, 3);
+            this.BudgetComboBox.Location = new System.Drawing.Point(3, 3);
             this.BudgetComboBox.Name = "BudgetComboBox";
-            this.BudgetComboBox.Size = new System.Drawing.Size(133, 21);
+            this.BudgetComboBox.Size = new System.Drawing.Size(181, 21);
             this.BudgetComboBox.TabIndex = 33;
             // 
             // SidePanelButton
@@ -651,8 +649,7 @@
             // GridViewPanel
             // 
             this.GridViewPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.GridViewPanel.Controls.Add(this.panel1);
-            this.GridViewPanel.Controls.Add(this.dateTimePicker1);
+            this.GridViewPanel.Controls.Add(this.BudgetPanel);
             this.GridViewPanel.Controls.Add(this.ExpenseGridView);
             this.GridViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewPanel.Location = new System.Drawing.Point(200, 162);
@@ -662,9 +659,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(456, 50);
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 57);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // ExpenseGridView
@@ -684,12 +681,16 @@
             this.ExpenseGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridViewCellValueChanged);
             this.ExpenseGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ExpenseGridView_RowsRemoved);
             // 
-            // panel1
+            // BudgetPanel
             // 
-            this.panel1.Location = new System.Drawing.Point(290, 136);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 6;
+            this.BudgetPanel.Controls.Add(this.BudgetComboBox);
+            this.BudgetPanel.Controls.Add(this.SetButton);
+            this.BudgetPanel.Controls.Add(this.dateTimePicker1);
+            this.BudgetPanel.Controls.Add(this.BudgetBox);
+            this.BudgetPanel.Location = new System.Drawing.Point(522, 17);
+            this.BudgetPanel.Name = "BudgetPanel";
+            this.BudgetPanel.Size = new System.Drawing.Size(248, 80);
+            this.BudgetPanel.TabIndex = 6;
             // 
             // Form1
             // 
@@ -714,12 +715,13 @@
             this.AddNewPanel.ResumeLayout(false);
             this.AddNewPanel.PerformLayout();
             this.TitlePanel.ResumeLayout(false);
-            this.TitlePanel.PerformLayout();
             this.EditPanel.ResumeLayout(false);
             this.FilterPanel.ResumeLayout(false);
             this.FilterPanel.PerformLayout();
             this.GridViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGridView)).EndInit();
+            this.BudgetPanel.ResumeLayout(false);
+            this.BudgetPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -776,7 +778,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel BudgetPanel;
     }
 }
 
