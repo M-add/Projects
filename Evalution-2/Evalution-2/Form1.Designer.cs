@@ -39,9 +39,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.AddExpenseButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DayViewButton = new System.Windows.Forms.Button();
             this.MonthViewButton = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
+            this.RemoveButton = new System.Windows.Forms.Button();
             this.TotalButton = new System.Windows.Forms.Button();
             this.EditModePanel = new System.Windows.Forms.Panel();
             this.UpdateButton = new System.Windows.Forms.Button();
@@ -49,14 +50,15 @@
             this.FilterButton = new System.Windows.Forms.Button();
             this.ViewPanel = new System.Windows.Forms.Panel();
             this.RemoveAllutton = new System.Windows.Forms.Button();
+            this.ViewButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.SideViewLabel = new System.Windows.Forms.Label();
             this.ExpensePanel = new System.Windows.Forms.Panel();
             this.AddNewPanel = new System.Windows.Forms.Panel();
             this.AddOkButton = new System.Windows.Forms.Button();
             this.valueBox = new System.Windows.Forms.TextBox();
-            this.ViewButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.SideViewLabel = new System.Windows.Forms.Label();
             this.TitlePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SetButton = new System.Windows.Forms.Button();
             this.BudgetBox = new System.Windows.Forms.TextBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
@@ -75,8 +77,8 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.GridViewPanel = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ExpenseGridView = new System.Windows.Forms.DataGridView();
-            this.RemoveButton = new System.Windows.Forms.Button();
             this.SidePanel.SuspendLayout();
             this.EditModePanel.SuspendLayout();
             this.ViewPanel.SuspendLayout();
@@ -109,28 +111,32 @@
             // 
             // RemoveCategory
             // 
-            this.RemoveCategory.Location = new System.Drawing.Point(84, 10);
+            this.RemoveCategory.BackColor = System.Drawing.Color.Crimson;
+            this.RemoveCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RemoveCategory.Location = new System.Drawing.Point(114, 7);
             this.RemoveCategory.Name = "RemoveCategory";
-            this.RemoveCategory.Size = new System.Drawing.Size(46, 24);
+            this.RemoveCategory.Size = new System.Drawing.Size(34, 25);
             this.RemoveCategory.TabIndex = 17;
             this.RemoveCategory.Text = "X";
-            this.RemoveCategory.UseVisualStyleBackColor = true;
+            this.RemoveCategory.UseVisualStyleBackColor = false;
             this.RemoveCategory.Click += new System.EventHandler(this.RemoveCategoryClick);
             // 
             // AddCategory
             // 
-            this.AddCategory.Location = new System.Drawing.Point(136, 9);
+            this.AddCategory.BackColor = System.Drawing.Color.SkyBlue;
+            this.AddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddCategory.Location = new System.Drawing.Point(148, 7);
             this.AddCategory.Name = "AddCategory";
-            this.AddCategory.Size = new System.Drawing.Size(46, 25);
+            this.AddCategory.Size = new System.Drawing.Size(34, 25);
             this.AddCategory.TabIndex = 11;
             this.AddCategory.Text = "+";
-            this.AddCategory.UseVisualStyleBackColor = true;
+            this.AddCategory.UseVisualStyleBackColor = false;
             this.AddCategory.Click += new System.EventHandler(this.AddCategoryClick);
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(537, 15);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(537, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 21);
             this.label3.TabIndex = 9;
@@ -139,8 +145,8 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(366, 15);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(362, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 21);
             this.label2.TabIndex = 8;
@@ -149,10 +155,10 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 14);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 23);
+            this.label1.Size = new System.Drawing.Size(86, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "Category :-";
             // 
@@ -165,7 +171,7 @@
             "Clothes"});
             this.comboBox1.Location = new System.Drawing.Point(3, 39);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 32);
+            this.comboBox1.Size = new System.Drawing.Size(179, 21);
             this.comboBox1.TabIndex = 2;
             // 
             // textBox3
@@ -196,19 +202,19 @@
             this.AddExpenseButton.UseVisualStyleBackColor = false;
             this.AddExpenseButton.Click += new System.EventHandler(this.AddExpenseButton_Click);
             // 
-            // button1
+            // DayViewButton
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 35);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Day view";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.DayViewButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.DayViewButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DayViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DayViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DayViewButton.Location = new System.Drawing.Point(0, 33);
+            this.DayViewButton.Name = "DayViewButton";
+            this.DayViewButton.Size = new System.Drawing.Size(200, 35);
+            this.DayViewButton.TabIndex = 5;
+            this.DayViewButton.Text = "Day view";
+            this.DayViewButton.UseVisualStyleBackColor = false;
+            this.DayViewButton.Click += new System.EventHandler(this.DayViewButtonClick);
             // 
             // MonthViewButton
             // 
@@ -233,7 +239,6 @@
             this.SidePanel.Controls.Add(this.FilterButton);
             this.SidePanel.Controls.Add(this.ViewPanel);
             this.SidePanel.Controls.Add(this.RemoveAllutton);
-            this.SidePanel.Controls.Add(this.ExpensePanel);
             this.SidePanel.Controls.Add(this.ViewButton);
             this.SidePanel.Controls.Add(this.panel3);
             this.SidePanel.Controls.Add(this.SideViewLabel);
@@ -241,9 +246,21 @@
             this.SidePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SidePanel.Location = new System.Drawing.Point(0, 10);
             this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(200, 648);
+            this.SidePanel.Size = new System.Drawing.Size(200, 734);
             this.SidePanel.TabIndex = 2;
             this.SidePanel.Visible = false;
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.RemoveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RemoveButton.Location = new System.Drawing.Point(0, 660);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(200, 33);
+            this.RemoveButton.TabIndex = 23;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButtonClick);
             // 
             // TotalButton
             // 
@@ -309,7 +326,7 @@
             // 
             // ViewPanel
             // 
-            this.ViewPanel.Controls.Add(this.button1);
+            this.ViewPanel.Controls.Add(this.DayViewButton);
             this.ViewPanel.Controls.Add(this.MonthViewButton);
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ViewPanel.Location = new System.Drawing.Point(0, 169);
@@ -323,67 +340,13 @@
             this.RemoveAllutton.BackColor = System.Drawing.Color.Crimson;
             this.RemoveAllutton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.RemoveAllutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveAllutton.Location = new System.Drawing.Point(0, 607);
+            this.RemoveAllutton.Location = new System.Drawing.Point(0, 693);
             this.RemoveAllutton.Name = "RemoveAllutton";
             this.RemoveAllutton.Size = new System.Drawing.Size(200, 41);
             this.RemoveAllutton.TabIndex = 13;
             this.RemoveAllutton.Text = "Remove All";
             this.RemoveAllutton.UseVisualStyleBackColor = false;
             this.RemoveAllutton.Click += new System.EventHandler(this.RemoveAlluttonClick);
-            // 
-            // ExpensePanel
-            // 
-            this.ExpensePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(95)))), ((int)(((byte)(176)))));
-            this.ExpensePanel.Controls.Add(this.AddNewPanel);
-            this.ExpensePanel.Controls.Add(this.comboBox1);
-            this.ExpensePanel.Controls.Add(this.label7);
-            this.ExpensePanel.Controls.Add(this.label3);
-            this.ExpensePanel.Controls.Add(this.AddExpenseButton);
-            this.ExpensePanel.Controls.Add(this.textBox3);
-            this.ExpensePanel.Controls.Add(this.label1);
-            this.ExpensePanel.Controls.Add(this.label2);
-            this.ExpensePanel.Controls.Add(this.textBox1);
-            this.ExpensePanel.Controls.Add(this.textBox2);
-            this.ExpensePanel.Controls.Add(this.AddCategory);
-            this.ExpensePanel.Controls.Add(this.RemoveCategory);
-            this.ExpensePanel.Location = new System.Drawing.Point(37, 589);
-            this.ExpensePanel.Name = "ExpensePanel";
-            this.ExpensePanel.Size = new System.Drawing.Size(39, 16);
-            this.ExpensePanel.TabIndex = 11;
-            // 
-            // AddNewPanel
-            // 
-            this.AddNewPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.AddNewPanel.Controls.Add(this.AddOkButton);
-            this.AddNewPanel.Controls.Add(this.valueBox);
-            this.AddNewPanel.Location = new System.Drawing.Point(3, 67);
-            this.AddNewPanel.Name = "AddNewPanel";
-            this.AddNewPanel.Size = new System.Drawing.Size(179, 23);
-            this.AddNewPanel.TabIndex = 20;
-            this.AddNewPanel.Visible = false;
-            // 
-            // AddOkButton
-            // 
-            this.AddOkButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.AddOkButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddOkButton.Location = new System.Drawing.Point(127, 0);
-            this.AddOkButton.Name = "AddOkButton";
-            this.AddOkButton.Size = new System.Drawing.Size(52, 23);
-            this.AddOkButton.TabIndex = 23;
-            this.AddOkButton.Text = "Ok";
-            this.AddOkButton.UseVisualStyleBackColor = false;
-            this.AddOkButton.Click += new System.EventHandler(this.AddOkButtonClick);
-            // 
-            // valueBox
-            // 
-            this.valueBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.valueBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueBox.Location = new System.Drawing.Point(0, 0);
-            this.valueBox.Multiline = true;
-            this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(127, 23);
-            this.valueBox.TabIndex = 22;
             // 
             // ViewButton
             // 
@@ -419,9 +382,64 @@
             this.SideViewLabel.Text = "   Expense    Application \r\nFeatures";
             this.SideViewLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ExpensePanel
+            // 
+            this.ExpensePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(95)))), ((int)(((byte)(176)))));
+            this.ExpensePanel.Controls.Add(this.AddNewPanel);
+            this.ExpensePanel.Controls.Add(this.comboBox1);
+            this.ExpensePanel.Controls.Add(this.label7);
+            this.ExpensePanel.Controls.Add(this.label3);
+            this.ExpensePanel.Controls.Add(this.AddExpenseButton);
+            this.ExpensePanel.Controls.Add(this.textBox3);
+            this.ExpensePanel.Controls.Add(this.label1);
+            this.ExpensePanel.Controls.Add(this.label2);
+            this.ExpensePanel.Controls.Add(this.textBox1);
+            this.ExpensePanel.Controls.Add(this.textBox2);
+            this.ExpensePanel.Controls.Add(this.AddCategory);
+            this.ExpensePanel.Controls.Add(this.RemoveCategory);
+            this.ExpensePanel.Location = new System.Drawing.Point(6, 1);
+            this.ExpensePanel.Name = "ExpensePanel";
+            this.ExpensePanel.Size = new System.Drawing.Size(824, 89);
+            this.ExpensePanel.TabIndex = 11;
+            // 
+            // AddNewPanel
+            // 
+            this.AddNewPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.AddNewPanel.Controls.Add(this.AddOkButton);
+            this.AddNewPanel.Controls.Add(this.valueBox);
+            this.AddNewPanel.Location = new System.Drawing.Point(3, 67);
+            this.AddNewPanel.Name = "AddNewPanel";
+            this.AddNewPanel.Size = new System.Drawing.Size(179, 23);
+            this.AddNewPanel.TabIndex = 20;
+            this.AddNewPanel.Visible = false;
+            // 
+            // AddOkButton
+            // 
+            this.AddOkButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.AddOkButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddOkButton.Location = new System.Drawing.Point(145, 0);
+            this.AddOkButton.Name = "AddOkButton";
+            this.AddOkButton.Size = new System.Drawing.Size(34, 23);
+            this.AddOkButton.TabIndex = 23;
+            this.AddOkButton.Text = "Ok";
+            this.AddOkButton.UseVisualStyleBackColor = false;
+            this.AddOkButton.Click += new System.EventHandler(this.AddOkButtonClick);
+            // 
+            // valueBox
+            // 
+            this.valueBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.valueBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueBox.Location = new System.Drawing.Point(0, 0);
+            this.valueBox.Multiline = true;
+            this.valueBox.Name = "valueBox";
+            this.valueBox.Size = new System.Drawing.Size(145, 23);
+            this.valueBox.TabIndex = 22;
+            // 
             // TitlePanel
             // 
             this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
+            this.TitlePanel.Controls.Add(this.button1);
             this.TitlePanel.Controls.Add(this.SetButton);
             this.TitlePanel.Controls.Add(this.BudgetBox);
             this.TitlePanel.Controls.Add(this.BudgetComboBox);
@@ -433,6 +451,17 @@
             this.TitlePanel.TabIndex = 4;
             this.TitlePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TitlePanelPaint);
             this.TitlePanel.Resize += new System.EventHandler(this.TitlePanelResize);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(387, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 43);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Budget";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // SetButton
             // 
@@ -501,6 +530,7 @@
             // FilterPanel
             // 
             this.FilterPanel.Controls.Add(this.label10);
+            this.FilterPanel.Controls.Add(this.ExpensePanel);
             this.FilterPanel.Controls.Add(this.label9);
             this.FilterPanel.Controls.Add(this.CustomSearchBoxTo);
             this.FilterPanel.Controls.Add(this.FilterBox);
@@ -518,7 +548,7 @@
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(246, 11);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 22);
@@ -620,44 +650,43 @@
             // GridViewPanel
             // 
             this.GridViewPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.GridViewPanel.Controls.Add(this.dateTimePicker1);
             this.GridViewPanel.Controls.Add(this.ExpenseGridView);
             this.GridViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewPanel.Location = new System.Drawing.Point(200, 162);
             this.GridViewPanel.Name = "GridViewPanel";
-            this.GridViewPanel.Size = new System.Drawing.Size(833, 496);
+            this.GridViewPanel.Size = new System.Drawing.Size(833, 582);
             this.GridViewPanel.TabIndex = 12;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(456, 50);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // ExpenseGridView
             // 
+            this.ExpenseGridView.AllowUserToAddRows = false;
+            this.ExpenseGridView.AllowUserToDeleteRows = false;
             this.ExpenseGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ExpenseGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ExpenseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ExpenseGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ExpenseGridView.Location = new System.Drawing.Point(0, 0);
             this.ExpenseGridView.Name = "ExpenseGridView";
-            this.ExpenseGridView.Size = new System.Drawing.Size(833, 496);
+            this.ExpenseGridView.ReadOnly = true;
+            this.ExpenseGridView.Size = new System.Drawing.Size(833, 582);
             this.ExpenseGridView.TabIndex = 4;
             this.ExpenseGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridView_CellClick);
             this.ExpenseGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridViewCellValueChanged);
             this.ExpenseGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ExpenseGridView_RowsRemoved);
             // 
-            // RemoveButton
-            // 
-            this.RemoveButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.RemoveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RemoveButton.Location = new System.Drawing.Point(0, 574);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(200, 33);
-            this.RemoveButton.TabIndex = 23;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = false;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButtonClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 658);
+            this.ClientSize = new System.Drawing.Size(1033, 744);
             this.Controls.Add(this.GridViewPanel);
             this.Controls.Add(this.EditPanel);
             this.Controls.Add(this.panel4);
@@ -691,7 +720,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button MonthViewButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DayViewButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -731,11 +760,13 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Panel GridViewPanel;
         private System.Windows.Forms.DataGridView ExpenseGridView;
-        private System.Windows.Forms.Panel EditModePanel;
-        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button ViewButton;
         private System.Windows.Forms.Panel ViewPanel;
         private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Panel EditModePanel;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

@@ -51,7 +51,7 @@ namespace Evalution_2
             dataGridView1.Rows.Clear();
             foreach (var id in Id)
             {
-                Expense exp = Expense.ExpenseList[id];
+                Expenses exp = ExpenseManager.ExpenseList[id];
                 if (exp.Date >= From && exp.Date <= To)
                 {
                     dataGridView1.Rows.Add(exp.Name, exp.Amount, exp.Date.ToShortDateString(), exp.Category); 
@@ -77,11 +77,11 @@ namespace Evalution_2
                 try
                 {
                     DataGridViewRow row = dataGridView1.Rows[count];
-                    Expense.ExpenseList[i].Category = row.Cells[3].Value.ToString();
-                    Expense.ExpenseList[i].Name = row.Cells[0].Value.ToString();
-                    Expense.ExpenseList[i].Amount = int.Parse(row.Cells[1].Value.ToString());
+                    ExpenseManager.ExpenseList[i].Category = row.Cells[3].Value.ToString();
+                    ExpenseManager.ExpenseList[i].Name = row.Cells[0].Value.ToString();
+                    ExpenseManager.ExpenseList[i].Amount = int.Parse(row.Cells[1].Value.ToString());
                     string s = dataGridView1.Rows[count].Cells[2].Value.ToString();
-                    Expense.ExpenseList[i].Date = DateTime.Parse(DateTime.Parse(s).ToShortDateString());
+                    ExpenseManager.ExpenseList[i].Date = DateTime.Parse(DateTime.Parse(s).ToShortDateString());
                     count++;
                 }
                 catch(Exception ex)

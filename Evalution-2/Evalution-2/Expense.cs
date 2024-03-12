@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Evalution_2
 {
-    public class Expense
+    public class Expenses
     {
-        public static List<Expense> ExpenseList = new List<Expense>();
+        //public static List<Expenses> ExpenseList = new List<Expenses>();
 
         public string Category { get; set; }
         public string Name;
@@ -16,7 +16,7 @@ namespace Evalution_2
         public DateTime Date;
         private int Budget { get; set; }
 
-        public Expense(string category, string name, string amt, string date)
+        public Expenses(string category, string name, string amt, string date)
         {
             Category = category;
             Name = name == "" ? category : name;

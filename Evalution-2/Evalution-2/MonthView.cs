@@ -31,7 +31,7 @@ namespace Evalution_2
         private void SetYear()
         {
             HashSet<int> yearSet = new HashSet<int>();
-            foreach (var exp in Expense.ExpenseList)
+            foreach (var exp in ExpenseManager.ExpenseList)
             {
                 int year = exp.Date.Year;
                 if (!yearSet.Contains(year))
@@ -75,7 +75,7 @@ namespace Evalution_2
             if (YearBox.Text != "")
             {
                 int Year = int.Parse(YearBox.Text);
-                foreach (var expense in Expense.ExpenseList)
+                foreach (var expense in ExpenseManager.ExpenseList)
                 {
                     if (expense.Date.Year == Year)
                     {

@@ -14,10 +14,10 @@ namespace Evalution_2
     {
         private Dictionary<string, Dictionary<DateTime, int>> monthExpense = new Dictionary<string, Dictionary<DateTime, int>>();
         private HashSet<string> Categories = new HashSet<string>();
-        List<Expense> ExpenseList = new List<Expense>();
+        List<Expenses> ExpenseList = new List<Expenses>();
         private DataTable table = new DataTable();
 
-        public DayView(List<Expense> list)
+        public DayView(List<Expenses> list)
         {
             InitializeComponent();
 
@@ -45,7 +45,7 @@ namespace Evalution_2
             }
         }
 
-        private void AddData(List<Expense> ExpenseList)
+        private void AddData(List<Expenses> ExpenseList)
         {
 
             int index = 1;

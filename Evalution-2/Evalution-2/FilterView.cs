@@ -43,7 +43,7 @@ namespace Evalution_2
         private void SetValue()
         {
             dataGridView1.Rows.Clear();
-            foreach (var exp in Expense.ExpenseList)
+            foreach (var exp in ExpenseManager.ExpenseList)
             {
                 if (exp.Category == category)
                 {
@@ -74,13 +74,13 @@ namespace Evalution_2
         private void UpdateButtonClick(object sender, EventArgs e)
         {
             int count = 0;
-            foreach(var exp in Expense.ExpenseList)
+            foreach(var exp in ExpenseManager.ExpenseList)
             {
                 if(exp.Category == category)
                 {
                     if(dataGridView1.RowCount == 0)
                     {
-                        Expense.ExpenseList.Remove(exp);
+                        ExpenseManager.ExpenseList.Remove(exp);
                     }
                     else if (dataGridView1.RowCount > 0)
                     {
