@@ -41,7 +41,7 @@ namespace Evalution_2
         private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            BudgetUpdate = new int[3];
+            BudgetUpdate = new int[4];
             BudgetUpdate[0] = int.Parse(row.Cells[1].Value.ToString());
             BudgetUpdate[2] = DateTime.Parse(DateTime.Parse(row.Cells[2].Value.ToString()).ToString()).Month;
             BudgetUpdate[3] = DateTime.Parse(DateTime.Parse(row.Cells[2].Value.ToString()).ToString()).Year;

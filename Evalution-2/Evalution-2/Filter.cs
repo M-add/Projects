@@ -104,7 +104,7 @@ namespace Evalution_2
             ExpenseGridView.DataSource = null;
             if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][InnerKey] -= updatedAmount;
+                //Budget[key][InnerKey] -= updatedAmount;
                 if (Budget[key][InnerKey] <= 0)
                 {
                     MessageBox.Show("The Limit of " + key + " Exceeded for month :- " + month, "",
