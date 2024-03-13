@@ -17,7 +17,7 @@ namespace Evalution_2
     {
         private void AddExpenseButton_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && textBox3.Text != "" && textBox2.Text != "")
+            if (comboBox1.Text != "" && textBox3.Text != "" && textBox2.Text != "" && !budgetShow)
             {
                 expense = new Expenses(comboBox1.Text, textBox1.Text, textBox2.Text,
                         textBox3.Text);
@@ -32,7 +32,7 @@ namespace Evalution_2
                 ExpenseManager.ExpenseList.Add(expense);
 
                 DataBaseConnection(query);
-
+                
                 CheckBudget(expense.Category, expense.Date.Month, expense.Date.Year, expense.Amount);
             }
         }

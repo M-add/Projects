@@ -114,10 +114,11 @@ namespace Evalution_2
             string key = ExpenseManager.ExpenseList[e.RowIndex].Category;
             int month = ExpenseManager.ExpenseList[e.RowIndex].Date.Month;
             int Year = ExpenseManager.ExpenseList[e.RowIndex].Date.Year;
+            int amount = ExpenseManager.ExpenseList[e.RowIndex].Amount;
             string InnerKey = "" + month + "," + Year;
             if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
-                Budget[key][InnerKey] += ExpenseManager.ExpenseList[e.RowIndex].Amount;
+                Budget[key][InnerKey] += amount;
             }
             foreach (var exp in ExpenseManager.ExpenseList)
             {
@@ -137,9 +138,19 @@ namespace Evalution_2
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+            foreach (DataRow row in BudgetTable.Rows)
+            {
+                string category = row[1].ToString();
+                string monthYear = row[2].ToString();
+                int amt = int.Parse(row[3].ToString());
+                if (category == key && monthYear == InnerKey)
+                {
+                    row[3] = Budget[key][InnerKey];
+                }
+            }
+            Budgets.Refresh();
         }
-
-
 
         private void ExpenseGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -165,11 +176,6 @@ namespace Evalution_2
 
         private void TitlePanelPaint(object sender, PaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            Brush brush = new SolidBrush(Color.WhiteSmoke);
-            Font font = new Font("Microsoft Sans Serif", 28, FontStyle.Regular);
-            Point point = new Point(TitlePanel.Width / 4, 0);
-            e.Graphics.DrawString("Expense Tracker", font, brush, point);
         }
 
         private void SidePanelButtonClick(object sender, EventArgs e)
@@ -206,6 +212,17 @@ namespace Evalution_2
                 {
                     Budget[key][InnerKey] += amount;
                 }
+                foreach (DataRow row in BudgetTable.Rows)
+                {
+                    string category = row[1].ToString();
+                    string monthYear = row[2].ToString();
+                    int amt = int.Parse(row[3].ToString());
+                    if (category == key && monthYear == InnerKey)
+                    {
+                        row[3] = amt + amount;
+                    }
+                }
+                Budgets.Refresh();
 
                 //    if (!UpdateClick)
                 //    {
@@ -232,6 +249,7 @@ namespace Evalution_2
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            //Expense Table Update
             string query = "Delete from expense";
             MySqlCommand cmd = new MySqlCommand(query, connect);
             cmd.ExecuteNonQuery();
@@ -246,8 +264,31 @@ namespace Evalution_2
                 cmd.Parameters.AddWithValue("@Category", ex.Category);
                 cmd.ExecuteNonQuery();
             });
+
+            //Budget Table Update
+            query = "Delete from budget";
+            cmd = new MySqlCommand(query, connect);
+            cmd.ExecuteNonQuery();
+            count = 1;
+            foreach (var budget in Budget)
+            {
+                string category = budget.Key;
+                string MonthYear = "";
+                int amount = 0;
+                foreach (var dict in Budget[category])
+                {
+                    MonthYear = dict.Key;
+                    amount = dict.Value;
+                    cmd = new MySqlCommand($"Insert into budget values({count++},@Category , @MonthYear , @Budget)", connect);
+                    cmd.Parameters.AddWithValue("@Category", category);
+                    cmd.Parameters.AddWithValue("@MonthYear", MonthYear);
+                    cmd.Parameters.AddWithValue("@Budget", amount);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            connect.Close();
             base.OnFormClosing(e);
         }
-      
+
     }
 }

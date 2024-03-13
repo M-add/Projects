@@ -80,6 +80,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.GridViewPanel = new System.Windows.Forms.Panel();
             this.ExpenseGridView = new System.Windows.Forms.DataGridView();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
             this.EditModePanel.SuspendLayout();
             this.ViewPanel.SuspendLayout();
@@ -206,7 +207,7 @@
             // 
             // DayViewButton
             // 
-            this.DayViewButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.DayViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(219)))), ((int)(((byte)(241)))));
             this.DayViewButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.DayViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DayViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,7 +221,7 @@
             // 
             // MonthViewButton
             // 
-            this.MonthViewButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.MonthViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(219)))), ((int)(((byte)(241)))));
             this.MonthViewButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.MonthViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MonthViewButton.Location = new System.Drawing.Point(0, 0);
@@ -255,7 +256,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 508);
@@ -280,7 +281,7 @@
             // 
             // TotalButton
             // 
-            this.TotalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.TotalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.TotalButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.TotalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalButton.Location = new System.Drawing.Point(0, 449);
@@ -303,7 +304,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(219)))), ((int)(((byte)(241)))));
             this.UpdateButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UpdateButton.Location = new System.Drawing.Point(0, 0);
@@ -316,7 +317,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.EditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.EditButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditButton.Location = new System.Drawing.Point(0, 333);
@@ -329,7 +330,7 @@
             // 
             // FilterButton
             // 
-            this.FilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.FilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.FilterButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.FilterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FilterButton.Location = new System.Drawing.Point(0, 273);
@@ -366,7 +367,7 @@
             // 
             // ViewButton
             // 
-            this.ViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.ViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.ViewButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewButton.Location = new System.Drawing.Point(0, 110);
@@ -455,6 +456,7 @@
             // TitlePanel
             // 
             this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
+            this.TitlePanel.Controls.Add(this.TitleLabel);
             this.TitlePanel.Controls.Add(this.BudgetButton);
             this.TitlePanel.Controls.Add(this.BudgetPanel);
             this.TitlePanel.Controls.Add(this.SidePanelButton);
@@ -468,9 +470,9 @@
             // 
             // BudgetButton
             // 
-            this.BudgetButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.BudgetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.BudgetButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BudgetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BudgetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BudgetButton.Location = new System.Drawing.Point(540, 0);
             this.BudgetButton.Name = "BudgetButton";
             this.BudgetButton.Size = new System.Drawing.Size(108, 49);
@@ -517,7 +519,7 @@
             // 
             // SetButton
             // 
-            this.SetButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.SetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(219)))), ((int)(((byte)(241)))));
             this.SetButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.SetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SetButton.Location = new System.Drawing.Point(127, 0);
@@ -706,6 +708,18 @@
             this.ExpenseGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridViewCellValueChanged);
             this.ExpenseGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ExpenseGridView_RowsRemoved);
             // 
+            // TitleLabel
+            // 
+            this.TitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.TitleLabel.Location = new System.Drawing.Point(131, 3);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(372, 43);
+            this.TitleLabel.TabIndex = 37;
+            this.TitleLabel.Text = "Expense Tracker";
+            this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,6 +807,7 @@
         private System.Windows.Forms.Button BudgetButton;
         private System.Windows.Forms.Panel BudgetPanel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }
 

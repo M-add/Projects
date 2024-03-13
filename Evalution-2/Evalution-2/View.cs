@@ -17,13 +17,13 @@ namespace Evalution_2
     {
         private void ViewButtonClick(object sender, EventArgs e)
         {
-            if (ViewButton.BackColor == Color.FromArgb(214, 201, 235))
+            if (ViewButton.BackColor == Color.FromArgb(174, 148, 216))
             {
                 ViewButton.BackColor = SystemColors.Highlight;
             }
             else
             {
-                ViewButton.BackColor = Color.FromArgb(214, 201, 235);
+                ViewButton.BackColor = Color.FromArgb(174, 148, 216);
             }
             ViewPanel.Visible = !ViewPanel.Visible;
         }

@@ -43,7 +43,19 @@ namespace Evalution_2
                 string monthYear = budget[2].ToString();
                 string category = budget[1].ToString();
 
-                Budget.Add(category, new Dictionary<string, int> { { monthYear, amount } });
+                if (Budget.ContainsKey(category) && Budget[category].ContainsKey(monthYear))
+                {
+                    Budget[category][monthYear] = amount;
+                }
+                else if (Budget.ContainsKey(category))
+                {
+                    Budget[category].Add(monthYear, amount);
+                }
+                else
+                {
+                    Budget.Add(category,
+                        new Dictionary<string, int> { { monthYear, amount } });
+                }
             }
         }
 
@@ -96,37 +108,39 @@ namespace Evalution_2
                 BudgetComboBox.Text = "";
                 BudgetButton.Visible = true;
                 BudgetPanel.Visible = false;
-                AddBudgetToDataBase();
+
+                AddBudgetToDataBase(key , InnerKey , value);
             }
             CheckPreviousBudget();
         }
 
-        private void AddBudgetToDataBase()
+        private void AddBudgetToDataBase(string category , string monthYear , int amount)
         {
-            foreach (var budget in Budget)
+            BudgetTable.Rows.Clear();
+            string query = "INSERT INTO budget (Category, MonthYear ,Budget) VALUES " +
+               "('" + category + "', '" + monthYear + "', '" + amount + "');";
+            MySqlCommand command = new MySqlCommand(query, connect);
+            command.ExecuteNonQuery();
+            string queryShow = "SELECT * FROM budget;";
+            using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
             {
-                string category = budget.Key;
-                string MonthYear ="";
-                int amount = 0;
-                foreach (var dict in Budget[category])
+                using (MySqlDataReader read = commandShow.ExecuteReader())
                 {
-                    MonthYear = dict.Key;
-                    amount = dict.Value;
+                    BudgetTable.Load(read);
                 }
-                string query = "INSERT INTO budget (Category, MonthYear ,Budget) VALUES " +
-               "('" + category + "', '" + MonthYear + "', '" + amount + "');";
-                MySqlCommand command = new MySqlCommand(query, connect);
-                command.ExecuteNonQuery();
-                string queryShow = "SELECT * FROM budget;";
-                using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
-                {
-                    using (MySqlDataReader read = commandShow.ExecuteReader())
-                    {
-                        BudgetTable.Load(read);
-                    }
-                }
-                Budgets.DataSource = BudgetTable;
             }
+            Budgets.DataSource = BudgetTable;
+            //foreach (var budget in Budget)
+            //{
+            //    string category = budget.Key;
+            //    string MonthYear ="";
+            //    int amount = 0;
+            //    foreach (var dict in Budget[category])
+            //    {
+            //        MonthYear = dict.Key;
+            //        amount = dict.Value;
+            //    }
+            //}
         }
 
         private void CheckPreviousBudget()
@@ -152,6 +166,18 @@ namespace Evalution_2
         private void CheckBudget(string key, int month, int year, int amount)
         {
             string InnerKey = month + "," + year;
+
+            foreach(DataRow row in BudgetTable.Rows)
+            {
+                string category = row[1].ToString();
+                string monthYear = row[2].ToString();
+                int amt = int.Parse(row[3].ToString());
+                if(category == key && monthYear == InnerKey)
+                {
+                    row[3] = amt - amount;
+                }
+            }
+            Budgets.Refresh();
 
             if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
