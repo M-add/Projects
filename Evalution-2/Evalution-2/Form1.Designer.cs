@@ -42,6 +42,7 @@
             this.DayViewButton = new System.Windows.Forms.Button();
             this.MonthViewButton = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.TotalButton = new System.Windows.Forms.Button();
             this.EditModePanel = new System.Windows.Forms.Panel();
@@ -233,6 +234,7 @@
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
+            this.SidePanel.Controls.Add(this.button1);
             this.SidePanel.Controls.Add(this.RemoveButton);
             this.SidePanel.Controls.Add(this.TotalButton);
             this.SidePanel.Controls.Add(this.EditModePanel);
@@ -250,6 +252,19 @@
             this.SidePanel.Size = new System.Drawing.Size(200, 734);
             this.SidePanel.TabIndex = 2;
             this.SidePanel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(201)))), ((int)(((byte)(235)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 508);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 55);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Budget Table";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.BudgetTableShowClick);
             // 
             // RemoveButton
             // 
@@ -398,9 +413,9 @@
             this.ExpensePanel.Controls.Add(this.textBox2);
             this.ExpensePanel.Controls.Add(this.AddCategory);
             this.ExpensePanel.Controls.Add(this.RemoveCategory);
-            this.ExpensePanel.Location = new System.Drawing.Point(6, 1);
+            this.ExpensePanel.Location = new System.Drawing.Point(16, 1);
             this.ExpensePanel.Name = "ExpensePanel";
-            this.ExpensePanel.Size = new System.Drawing.Size(824, 89);
+            this.ExpensePanel.Size = new System.Drawing.Size(814, 89);
             this.ExpensePanel.TabIndex = 11;
             // 
             // AddNewPanel
@@ -678,7 +693,6 @@
             // ExpenseGridView
             // 
             this.ExpenseGridView.AllowUserToAddRows = false;
-            this.ExpenseGridView.AllowUserToDeleteRows = false;
             this.ExpenseGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ExpenseGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ExpenseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -778,6 +792,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button BudgetButton;
         private System.Windows.Forms.Panel BudgetPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

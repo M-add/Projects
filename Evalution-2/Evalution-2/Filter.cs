@@ -105,10 +105,15 @@ namespace Evalution_2
             if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
             {
                 //Budget[key][InnerKey] -= updatedAmount;
-                if (Budget[key][InnerKey] <= 0)
+                if (Budget[key][InnerKey] < 0)
                 {
-                    MessageBox.Show("The Limit of " + key + " Exceeded for month :- " + month, "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The Limit of " + key + " Exceeded for month : " + month,
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (Budget[key][InnerKey] == 0)
+                {
+                    MessageBox.Show("The Limit of " + key + " Reached for month : " + month,
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             int count = 1;

@@ -37,7 +37,6 @@ namespace Evalution_2
             ExpensePanel.Dock = DockStyle.Fill;
             ExpensePanel.SendToBack();
             FilterBox.Items.Add("All");
-
             DoubleBuffered = true;
         }
 
@@ -58,6 +57,7 @@ namespace Evalution_2
             ExpenseGridView.DataSource = table;
             ExpenseGridView.Columns["Id"].Visible = false;
             SetId();
+            InitializeBudget();
             #endregion
 
             textBox1.Font = textBox2.Font = textBox3.Font =
@@ -248,5 +248,6 @@ namespace Evalution_2
             });
             base.OnFormClosing(e);
         }
+      
     }
 }

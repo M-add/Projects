@@ -15,6 +15,53 @@ namespace Evalution_2
 {
     public partial class Form1 : Form
     {
+        private DataTable BudgetTable = new DataTable();
+        private bool budgetShow = false;
+        private DataGridView Budgets = new DataGridView();
+
+        private void InitializeBudget()
+        {
+            string queryShow = "SELECT * FROM budget;";
+            using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
+            {
+                using (MySqlDataReader read = commandShow.ExecuteReader())
+                {
+                    BudgetTable.Load(read);
+                }
+            }
+            Budgets.DataSource = BudgetTable;
+            Budgets.Dock = DockStyle.Fill;
+            Budgets.BackgroundColor = SystemColors.Control;
+            Budgets.AllowUserToAddRows = false;
+            Budgets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Budgets.Hide();
+            GridViewPanel.Controls.Add(Budgets);
+
+            foreach(DataRow budget in BudgetTable.Rows)
+            {
+                int amount = int.Parse(budget[3].ToString());
+                string monthYear = budget[2].ToString();
+                string category = budget[1].ToString();
+
+                Budget.Add(category, new Dictionary<string, int> { { monthYear, amount } });
+            }
+        }
+
+        private void BudgetTableShowClick(object sender, EventArgs e)
+        {
+            budgetShow = !budgetShow;
+            if (budgetShow)
+            {
+                ExpenseGridView.Hide();
+                Budgets.Show();
+            }
+            else
+            {
+                Budgets.Hide();
+                ExpenseGridView.Show();
+            }
+        }
+
         private void BudgetButtonClick(object sender, EventArgs e)
         {
             BudgetPanel.Visible = true;
@@ -49,8 +96,37 @@ namespace Evalution_2
                 BudgetComboBox.Text = "";
                 BudgetButton.Visible = true;
                 BudgetPanel.Visible = false;
+                AddBudgetToDataBase();
             }
             CheckPreviousBudget();
+        }
+
+        private void AddBudgetToDataBase()
+        {
+            foreach (var budget in Budget)
+            {
+                string category = budget.Key;
+                string MonthYear ="";
+                int amount = 0;
+                foreach (var dict in Budget[category])
+                {
+                    MonthYear = dict.Key;
+                    amount = dict.Value;
+                }
+                string query = "INSERT INTO budget (Category, MonthYear ,Budget) VALUES " +
+               "('" + category + "', '" + MonthYear + "', '" + amount + "');";
+                MySqlCommand command = new MySqlCommand(query, connect);
+                command.ExecuteNonQuery();
+                string queryShow = "SELECT * FROM budget;";
+                using (MySqlCommand commandShow = new MySqlCommand(queryShow, connect))
+                {
+                    using (MySqlDataReader read = commandShow.ExecuteReader())
+                    {
+                        BudgetTable.Load(read);
+                    }
+                }
+                Budgets.DataSource = BudgetTable;
+            }
         }
 
         private void CheckPreviousBudget()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Evalution_2
 {
@@ -18,10 +19,18 @@ namespace Evalution_2
 
         public Expenses(string category, string name, string amt, string date)
         {
-            Category = category;
-            Name = name == "" ? category : name;
-            Amount = int.Parse(amt);
-            Date = DateTime.Parse(date);
+            try
+            {
+                Category = category;
+                Name = name == "" ? category : name;
+                Amount = int.Parse(amt);
+                Date = DateTime.Parse(date);
+            }
+            catch
+            {
+                MessageBox.Show("Enter Valid Input", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
