@@ -269,11 +269,11 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.RemoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(148)))), ((int)(((byte)(216)))));
             this.RemoveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RemoveButton.Location = new System.Drawing.Point(0, 660);
+            this.RemoveButton.Location = new System.Drawing.Point(0, 657);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(200, 33);
+            this.RemoveButton.Size = new System.Drawing.Size(200, 36);
             this.RemoveButton.TabIndex = 23;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = false;

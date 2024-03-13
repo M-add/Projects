@@ -31,8 +31,9 @@ namespace Evalution_2
             }
             Budgets.DataSource = BudgetTable;
             Budgets.Dock = DockStyle.Fill;
+            Budgets.CellValueChanged += BudgetsTableCellValueChanged;
             Budgets.BackgroundColor = SystemColors.Control;
-            Budgets.AllowUserToAddRows = false;
+            Budgets.AllowUserToAddRows = true;
             Budgets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Budgets.Hide();
             GridViewPanel.Controls.Add(Budgets);
@@ -56,6 +57,33 @@ namespace Evalution_2
                     Budget.Add(category,
                         new Dictionary<string, int> { { monthYear, amount } });
                 }
+            }
+        }
+
+        private void BudgetsTableCellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = Budgets.Rows[e.RowIndex];
+            try
+            {
+                string key = row.Cells[1].Value.ToString();
+                string InnerKey = row.Cells[2].Value.ToString();
+                int value = int.Parse(row.Cells[3].Value.ToString());
+                if (Budget.ContainsKey(key) && Budget[key].ContainsKey(InnerKey))
+                {
+                    Budget[key][InnerKey] = value;
+                }
+                else if (Budget.ContainsKey(key))
+                {
+                    Budget[key].Add(InnerKey, value);
+                }
+                else
+                {
+                    Budget.Add(BudgetComboBox.Text,
+                        new Dictionary<string, int> { { InnerKey, value } });
+                }
+            }
+            catch
+            {
             }
         }
 
