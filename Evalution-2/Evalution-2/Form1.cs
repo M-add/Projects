@@ -64,6 +64,21 @@ namespace Evalution_2
                 new Font("Microsoft Sans Serif", 16, FontStyle.Regular);
             comboBox1.Font = new Font("Microsoft Tai Le", 12, FontStyle.Regular);
 
+            //if(Budget.Count > 0)
+            //{
+            //    foreach(var exp in ExpenseManager.ExpenseList)
+            //    {
+            //        int month = exp.Date.Month;
+            //        int year = exp.Date.Year;
+            //        string category = exp.Category;
+            //        string key = month + "," + year;
+            //        if (Budget.ContainsKey(category) && Budget[category].ContainsKey(key))
+            //        {
+            //            Budget[category][key] -= exp.Amount;
+            //        }
+            //        Budgets.Refresh();
+            //    }
+            //}
             //ExpenseGridView.Columns.Add("Name", "Name");
             //ExpenseGridView.Columns.Add("Amount", "Amount");
             //ExpenseGridView.Columns.Add("Date", "Date");

@@ -695,6 +695,7 @@
             // ExpenseGridView
             // 
             this.ExpenseGridView.AllowUserToAddRows = false;
+            this.ExpenseGridView.AllowUserToDeleteRows = false;
             this.ExpenseGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ExpenseGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ExpenseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

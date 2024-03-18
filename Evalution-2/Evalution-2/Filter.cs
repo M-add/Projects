@@ -99,6 +99,17 @@ namespace Evalution_2
                 Budget[key][InnerKey] += prevAmount;
                 Budget[key][InnerKey] -= updatedAmount;
             }
+            foreach (DataRow row in BudgetTable.Rows)
+            {
+                string category = row[1].ToString();
+                string monthYear = row[2].ToString();
+                int amt = int.Parse(row[3].ToString());
+                if (category == key && monthYear == InnerKey)
+                {
+                    row[3] = Budget[key][InnerKey];
+                }
+            }
+            Budgets.Refresh();
             //ExpenseGridView.Rows.Clear();
             table.Rows.Clear();
             ExpenseGridView.DataSource = null;
